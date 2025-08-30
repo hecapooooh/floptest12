@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
-import db from "../src/db/mydatabase.ts";
 import helloRouter from "./routes/helloRoutes.ts";
+import db from "./db/index.ts";
 
 const app = express();
 const PORT = 5000;
