@@ -1,15 +1,16 @@
 import db from '../db/index.ts';
 import type { CompleteTraining } from '../models/completeTraining';
-import * as trainingService from './trainingService';
-import * as exerciseService from './exerciseService';
-import * as trainingExerciseService from './trainingExerciceService';
-import * as trainingExerciseSetService from './trainingExerciceSetService';
+import * as trainingService from './trainingService.ts';
+import * as exerciseService from './exerciseService.ts';
+import * as trainingExerciseService from './trainingExerciceService.ts';
+import * as trainingExerciseSetService from './trainingExerciceSetService.ts';
 
 /**
  * Insère un CompleteTraining dans la base (Training + exercises + sets)
  * Tout se fait dans une transaction
  */
 export function insertCompleteTraining(training: Omit<CompleteTraining, 'id' | 'created_at'>): void {
+  console.log("Insertion en base séance complète");
   const transaction = db.transaction(() => {
     // 1️⃣ Insérer le Training
     const trainingId = trainingService.insertTraining({

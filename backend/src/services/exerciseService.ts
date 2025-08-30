@@ -4,10 +4,10 @@ import type { Exercise } from '../models/exercise';
 
 export function insertExercise(ex: Omit<Exercise, 'id'>): number {
   const stmt = db.prepare(`
-    INSERT INTO exercises (name, muscle_group, image_url)
-    VALUES (?, ?, ?)
+    INSERT INTO exercises (name, muscle_group)
+    VALUES (?, ?)
   `);
-  const result = stmt.run(ex.name, ex.muscle_group, ex.image_url ?? null);
+  const result = stmt.run(ex.name, ex.muscle_group);
   return result.lastInsertRowid as number;
 }
 

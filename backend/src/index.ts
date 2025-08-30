@@ -1,7 +1,8 @@
 import express from "express";
 import cors from "cors";
-import type { Training } from "./models/training";
-
+import db from "./db/index.ts";
+import type { CompleteTraining } from "./models/completeTraining.ts";
+import { insertCompleteTraining } from "./services/completeTrainingService.ts";
 const app = express();
 const PORT = 5000;
 
@@ -36,4 +37,11 @@ app.listen(PORT, () => {
   console.log(`✅ Serveur backend lancé sur http://localhost:${PORT}`);
 });
 
+let train : CompleteTraining = {
+  exercises: [],
+  name: "",
+  is_public: false,
+  created_at: ""
+}
 
+insertCompleteTraining(train);

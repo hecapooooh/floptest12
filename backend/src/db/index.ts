@@ -1,5 +1,5 @@
 import Database from 'better-sqlite3';
-import { applyMigrations } from './migrate';
+import { applyMigrations } from './migrate.ts';
 
 const DB_PATH = 'src/db/app.db';
 const db = new Database(DB_PATH);
