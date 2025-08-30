@@ -1,7 +1,6 @@
 import express from "express";
 import cors from "cors";
-import helloRouter from "./routes/helloRoutes.ts";
-import db from "./db/index.ts";
+import type { Training } from "./models/training";
 
 const app = express();
 const PORT = 5000;
@@ -30,8 +29,11 @@ app.use(
 );
 
 app.use(express.json());
-app.use("/", helloRouter);
+
+
 
 app.listen(PORT, () => {
   console.log(`✅ Serveur backend lancé sur http://localhost:${PORT}`);
 });
+
+

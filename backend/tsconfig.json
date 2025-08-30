@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",                // version JS générée
+    "module": "ESNext",                // pour les imports ES
+    "moduleResolution": "node",        // résolution des modules style Node
+    "strict": true,                     // vérifications strictes TypeScript
+    "esModuleInterop": true,            // pour permettre import/export interop
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true                // optionnel, accélère la compilation
+  },
+  "include": ["src"]                    // dossier avec ton code TS
+}

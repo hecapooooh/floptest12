@@ -1,4 +1,4 @@
-export interface UserRequest {
+export default interface UserInput {
     group:string;
     lenght:string;
     intensity:string;
