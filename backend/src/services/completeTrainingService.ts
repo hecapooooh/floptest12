@@ -23,7 +23,6 @@ export function insertCompleteTraining(training: Omit<CompleteTraining, 'id' | '
     // 2️⃣ Insérer chaque exercise
     for (const ex of training.exercises) {
       const exerciseId = ex.exercise.id || exerciseService.insertExercise(ex.exercise);
-
       // 3️⃣ Insérer le lien TrainingExercise
       const trainingExId = trainingExerciseService.insertTrainingExercise({
         training_id: trainingId,
